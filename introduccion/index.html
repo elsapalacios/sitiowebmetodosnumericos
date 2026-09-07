@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Qué es un método numérico? · Métodos Numéricos</title>
+<meta name="description" content="Definición, características y por qué son necesarios los métodos numéricos.">
+
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html">
+      <strong>Métodos Numéricos</strong>
+      <span>Introducción y Teoría de errores</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">Menú ≡</button>
+    <nav class="main-nav">
+      <a href="../introduccion/index.html" class="active"><span class="num">01</span>Introducción</a>
+      <a href="../representacion-numeros/index.html" class=""><span class="num">02</span>Representación</a>
+      <a href="../aritmetica-punto-flotante/index.html" class=""><span class="num">03</span>Aritmética</a>
+      <a href="../errores-redondeo/index.html" class=""><span class="num">04</span>Errores</a>
+      <a href="../algoritmos-convergencia/index.html" class=""><span class="num">05</span>Algoritmos</a>
+      <a href="../python-metodos-numericos/index.html" class=""><span class="num">06</span>Python</a>
+      <a href="../recursos/index.html" class="">Recursos</a>
+      <a href="../acerca-de/index.html" class="">Acerca de</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-head">
+  <p class="kicker">Tema 01 — Fundamentos</p>
+  <h1>¿Qué es un método numérico?</h1>
+  <p class="dek">Definición, características y por qué son necesarios los métodos numéricos.</p>
+</div>
+
+<nav class="toc" aria-label="Contenido de la página">
+  <p class="toc-label">En esta página</p>
+  <ol>
+        <li><a href="#definicion">Definición</a></li>
+        <li><a href="#caracteristicas">Características principales</a></li>
+        <li><a href="#necesidad">¿Por qué son necesarios?</a></li>
+  </ol>
+</nav>
+
+<article class="content">
+  
+    <h2 id="definicion">Definición</h2>
+    <p>Un <strong>método numérico</strong> es un procedimiento sistemático, generalmente iterativo, que transforma un modelo matemático —una ecuación, un sistema de ecuaciones, una integral, una derivada— en una secuencia finita de operaciones aritméticas y lógicas, con el fin de obtener una solución aproximada dentro de un margen de error aceptable.</p>
+    <p>A diferencia de los métodos analíticos, que buscan una expresión exacta de la solución, los métodos numéricos buscan un valor numérico suficientemente cercano al valor real, calculable en un número finito de pasos.</p>
+
+    <h2 id="caracteristicas">Características principales</h2>
+    <ul>
+      <li>Aproximan la solución mediante procesos iterativos o de discretización.</li>
+      <li>Requieren de un criterio de convergencia y de un criterio de parada.</li>
+      <li>Generan siempre un error, cuya magnitud debe ser estimada y controlada.</li>
+      <li>Se implementan mediante algoritmos ejecutables en un computador.</li>
+      <li>Su eficiencia se mide en precisión, velocidad de convergencia y costo computacional.</li>
+    </ul>
+
+    <h2 id="necesidad">¿Por qué son necesarios?</h2>
+    <p>Muchos problemas matemáticos —resolver ecuaciones no lineales, evaluar integrales complejas, resolver sistemas de ecuaciones diferenciales o encontrar valores propios de una matriz de gran tamaño— no tienen solución analítica cerrada. Los métodos numéricos permiten obtener resultados aplicables en ingeniería, física, economía y ciencias de la computación, con una precisión que depende del método elegido y de los recursos computacionales disponibles.</p>
+
+    <div class="callout">
+      <p class="label">Ejemplo introductorio</p>
+      <p>Calcular la raíz cuadrada de 2 de forma exacta implica un número irracional con infinitas cifras decimales. Un método numérico, como el método de Newton-Raphson, permite aproximar este valor con la precisión que se necesite, deteniéndose cuando el error entre dos iteraciones sucesivas es menor que una tolerancia definida.</p>
+    </div>
+</article>
+
+<nav class="page-nav">
+  <a href="../index.html"><span class="dir">← Volver</span><span class="ttl">Inicio</span></a>
+  <a class="next" href="../representacion-numeros/index.html"><span class="dir">Tema siguiente →</span><span class="ttl">Representación de números en el computador</span></a>
+</nav>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="fmeta">Métodos Numéricos — Facultad de Ingeniería de Sistemas, 7.º semestre<br>Fundación Universitaria Claretiana (Uniclaretiana) · Docente: Nancy González Ramírez</p>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../recursos/index.html">Recursos</a>
+      <a href="../acerca-de/index.html">Acerca de</a>
+    </nav>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

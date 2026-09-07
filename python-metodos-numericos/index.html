@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introducción a Python para métodos numéricos · Métodos Numéricos</title>
+<meta name="description" content="Bibliotecas científicas y una calculadora de error en vivo.">
+
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html">
+      <strong>Métodos Numéricos</strong>
+      <span>Introducción y Teoría de errores</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">Menú ≡</button>
+    <nav class="main-nav">
+      <a href="../introduccion/index.html" class=""><span class="num">01</span>Introducción</a>
+      <a href="../representacion-numeros/index.html" class=""><span class="num">02</span>Representación</a>
+      <a href="../aritmetica-punto-flotante/index.html" class=""><span class="num">03</span>Aritmética</a>
+      <a href="../errores-redondeo/index.html" class=""><span class="num">04</span>Errores</a>
+      <a href="../algoritmos-convergencia/index.html" class=""><span class="num">05</span>Algoritmos</a>
+      <a href="../python-metodos-numericos/index.html" class="active"><span class="num">06</span>Python</a>
+      <a href="../recursos/index.html" class="">Recursos</a>
+      <a href="../acerca-de/index.html" class="">Acerca de</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-head">
+  <p class="kicker">Tema 06 — Herramientas</p>
+  <h1>Introducción a Python para métodos numéricos</h1>
+  <p class="dek">Bibliotecas científicas y una calculadora de error en vivo.</p>
+</div>
+
+<nav class="toc" aria-label="Contenido de la página">
+  <p class="toc-label">En esta página</p>
+  <ol>
+        <li><a href="#bibliotecas">Bibliotecas fundamentales</a></li>
+        <li><a href="#ejemplo1">Ejemplo: épsilon y error de redondeo</a></li>
+        <li><a href="#ejemplo2">Ejemplo: error absoluto y relativo</a></li>
+        <li><a href="#calculadora">Calculadora en vivo</a></li>
+  </ol>
+</nav>
+
+<article class="content">
+  
+    <h2 id="bibliotecas">Bibliotecas fundamentales</h2>
+    <p>Python se ha convertido en uno de los lenguajes más utilizados para implementar métodos numéricos, gracias a su sintaxis clara, su carácter de código abierto y sus bibliotecas especializadas en cálculo científico.</p>
+    <table class="data">
+      <thead><tr><th>Biblioteca</th><th>Uso principal</th></tr></thead>
+      <tbody>
+        <tr><td>NumPy</td><td>Manejo eficiente de arreglos y matrices, y funciones de álgebra lineal.</td></tr>
+        <tr><td>SciPy</td><td>Implementaciones optimizadas de métodos numéricos (raíces, integración, EDO, optimización).</td></tr>
+        <tr><td>Matplotlib</td><td>Generación de gráficos para visualizar funciones, errores y resultados.</td></tr>
+        <tr><td>Pandas</td><td>Organización y análisis de datos tabulares, útil para resultados de iteraciones.</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="ejemplo1">Ejemplo: épsilon y error de redondeo</h2>
+    <p>Este fragmento ilustra el épsilon de la máquina y un caso típico de error de redondeo:</p>
+    <pre class="code"><span class="k">import</span> numpy <span class="k">as</span> np
+
+<span class="c"># Épsilon de la máquina en precisión doble</span>
+eps = np.finfo(<span class="n">float</span>).eps
+print(<span class="s">'Épsilon de la máquina:'</span>, eps)
+
+<span class="c"># Ejemplo de error de redondeo</span>
+a = <span class="n">0.1</span> + <span class="n">0.2</span>
+print(<span class="s">'0.1 + 0.2 ='</span>, a)
+print(<span class="s">'¿Es igual a 0.3? ->'</span>, a == <span class="n">0.3</span>)</pre>
+    <p>La suma 0.1 + 0.2 no produce exactamente 0.3 debido a la representación binaria en punto flotante, tal como se explicó en el tema de aritmética de punto flotante.</p>
+
+    <h2 id="ejemplo2">Ejemplo: error absoluto y relativo</h2>
+    <pre class="code"><span class="k">def</span> error_absoluto(x_real, x_aprox):
+    <span class="k">return</span> abs(x_real - x_aprox)
+
+<span class="k">def</span> error_relativo(x_real, x_aprox):
+    <span class="k">return</span> abs(x_real - x_aprox) / abs(x_real)
+
+x_real = <span class="n">3.14159265</span>
+x_aprox = <span class="n">3.1416</span>
+
+print(<span class="s">'Error absoluto:'</span>, error_absoluto(x_real, x_aprox))
+print(<span class="s">'Error relativo:'</span>, error_relativo(x_real, x_aprox))</pre>
+
+    <h2 id="calculadora">Calculadora en vivo</h2>
+    <p>Prueba los mismos cálculos directamente en esta página, sin necesidad de ejecutar Python:</p>
+    <div class="calc">
+      <div class="calc-head">calculadora_error.py</div>
+      <div class="calc-body">
+        <div class="calc-row">
+          <div>
+            <label for="calc-real">x_real</label>
+            <input id="calc-real" type="number" step="any" value="3.14159265" inputmode="decimal">
+          </div>
+          <div>
+            <label for="calc-aprox">x_aprox</label>
+            <input id="calc-aprox" type="number" step="any" value="3.1416" inputmode="decimal">
+          </div>
+        </div>
+        <button id="calc-btn" type="button">Calcular error</button>
+        <div id="calc-result" class="calc-result" aria-live="polite">Error absoluto (Ea) = <span class="v">—</span></div>
+      </div>
+    </div>
+</article>
+
+<nav class="page-nav">
+  <a href="../algoritmos-convergencia/index.html"><span class="dir">← Tema anterior</span><span class="ttl">Algoritmos y convergencia</span></a>
+  <a class="next" href="../recursos/index.html"><span class="dir">Siguiente →</span><span class="ttl">Recursos</span></a>
+</nav>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="fmeta">Métodos Numéricos — Facultad de Ingeniería de Sistemas, 7.º semestre<br>Fundación Universitaria Claretiana (Uniclaretiana) · Docente: Nancy González Ramírez</p>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../recursos/index.html">Recursos</a>
+      <a href="../acerca-de/index.html">Acerca de</a>
+    </nav>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

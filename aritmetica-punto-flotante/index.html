@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aritmética de punto flotante · Métodos Numéricos</title>
+<meta name="description" content="Cancelación catastrófica, absorción y el épsilon de la máquina.">
+
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html">
+      <strong>Métodos Numéricos</strong>
+      <span>Introducción y Teoría de errores</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">Menú ≡</button>
+    <nav class="main-nav">
+      <a href="../introduccion/index.html" class=""><span class="num">01</span>Introducción</a>
+      <a href="../representacion-numeros/index.html" class=""><span class="num">02</span>Representación</a>
+      <a href="../aritmetica-punto-flotante/index.html" class="active"><span class="num">03</span>Aritmética</a>
+      <a href="../errores-redondeo/index.html" class=""><span class="num">04</span>Errores</a>
+      <a href="../algoritmos-convergencia/index.html" class=""><span class="num">05</span>Algoritmos</a>
+      <a href="../python-metodos-numericos/index.html" class=""><span class="num">06</span>Python</a>
+      <a href="../recursos/index.html" class="">Recursos</a>
+      <a href="../acerca-de/index.html" class="">Acerca de</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-head">
+  <p class="kicker">Tema 03 — Fundamentos</p>
+  <h1>Aritmética de punto flotante</h1>
+  <p class="dek">Cancelación catastrófica, absorción y el épsilon de la máquina.</p>
+</div>
+
+<nav class="toc" aria-label="Contenido de la página">
+  <p class="toc-label">En esta página</p>
+  <ol>
+        <li><a href="#particularidades">Particularidades operativas</a></li>
+        <li><a href="#epsilon">Épsilon de la máquina</a></li>
+  </ol>
+</nav>
+
+<article class="content">
+  
+    <h2 id="particularidades">Particularidades operativas</h2>
+    <p>La aritmética de punto flotante define cómo se realizan las operaciones básicas —suma, resta, multiplicación y división— entre números representados en este formato. A diferencia de la aritmética real, no es exacta ni siempre cumple todas las propiedades algebraicas habituales.</p>
+    <ul>
+      <li>El resultado de una operación puede no ser representable exactamente y debe redondearse.</li>
+      <li>La suma de números de magnitudes muy diferentes puede provocar la pérdida total del número más pequeño (<em>absorción</em>).</li>
+      <li>La resta de números muy cercanos entre sí puede provocar pérdida de cifras significativas (<em>cancelación catastrófica</em>).</li>
+      <li>La propiedad asociativa no siempre se cumple: (a + b) + c puede diferir de a + (b + c).</li>
+    </ul>
+
+    <div class="callout error">
+      <p class="label">Ejemplo — cancelación catastrófica</p>
+      <p>Si a = 1.000000001 y b = 1.000000000, en una representación con pocos dígitos significativos la resta a − b puede perder casi toda la información relevante, generando un resultado con un error relativo muy alto respecto al valor real.</p>
+    </div>
+
+    <h2 id="epsilon">Épsilon de la máquina</h2>
+    <p>El <strong>épsilon de la máquina</strong> (machine epsilon) es la menor cantidad positiva que, al sumarse a 1.0, produce un resultado distinto de 1.0 dentro de la precisión del sistema. Caracteriza la resolución de la aritmética de punto flotante y se usa como referencia para definir tolerancias en los algoritmos numéricos.</p>
+</article>
+
+<nav class="page-nav">
+  <a href="../representacion-numeros/index.html"><span class="dir">← Tema anterior</span><span class="ttl">Representación de números en el computador</span></a>
+  <a class="next" href="../errores-redondeo/index.html"><span class="dir">Tema siguiente →</span><span class="ttl">Errores de redondeo y aritmética de computadores</span></a>
+</nav>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="fmeta">Métodos Numéricos — Facultad de Ingeniería de Sistemas, 7.º semestre<br>Fundación Universitaria Claretiana (Uniclaretiana) · Docente: Nancy González Ramírez</p>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../recursos/index.html">Recursos</a>
+      <a href="../acerca-de/index.html">Acerca de</a>
+    </nav>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Errores de redondeo y aritmética de computadores · Métodos Numéricos</title>
+<meta name="description" content="Error inherente, de truncamiento y de redondeo; error absoluto y relativo.">
+
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html">
+      <strong>Métodos Numéricos</strong>
+      <span>Introducción y Teoría de errores</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">Menú ≡</button>
+    <nav class="main-nav">
+      <a href="../introduccion/index.html" class=""><span class="num">01</span>Introducción</a>
+      <a href="../representacion-numeros/index.html" class=""><span class="num">02</span>Representación</a>
+      <a href="../aritmetica-punto-flotante/index.html" class=""><span class="num">03</span>Aritmética</a>
+      <a href="../errores-redondeo/index.html" class="active"><span class="num">04</span>Errores</a>
+      <a href="../algoritmos-convergencia/index.html" class=""><span class="num">05</span>Algoritmos</a>
+      <a href="../python-metodos-numericos/index.html" class=""><span class="num">06</span>Python</a>
+      <a href="../recursos/index.html" class="">Recursos</a>
+      <a href="../acerca-de/index.html" class="">Acerca de</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-head">
+  <p class="kicker">Tema 04 — Teoría de errores</p>
+  <h1>Errores de redondeo y aritmética de computadores</h1>
+  <p class="dek">Error inherente, de truncamiento y de redondeo; error absoluto y relativo.</p>
+</div>
+
+<nav class="toc" aria-label="Contenido de la página">
+  <p class="toc-label">En esta página</p>
+  <ol>
+        <li><a href="#tipos">Tipos de error</a></li>
+        <li><a href="#medidas">Error absoluto y relativo</a></li>
+        <li><a href="#propagacion">Propagación del error</a></li>
+  </ol>
+</nav>
+
+<article class="content">
+  
+    <h2 id="tipos">Tipos de error</h2>
+    <ol class="decimal">
+      <li><strong>Error inherente:</strong> proviene de la imprecisión de los datos de entrada, ya sea por mediciones experimentales o por representaciones aproximadas de constantes.</li>
+      <li><strong>Error de truncamiento:</strong> se produce al reemplazar un proceso infinito —una serie, una derivada, una integral— por una aproximación finita, como al truncar una serie de Taylor.</li>
+      <li><strong>Error de redondeo:</strong> surge porque el computador solo puede almacenar un número finito de cifras significativas, obligando a redondear resultados intermedios y finales.</li>
+    </ol>
+
+    <h2 id="medidas">Error absoluto y error relativo</h2>
+    <p>Dado un valor aproximado (x<sub>a</sub>) y un valor real (x<sub>r</sub>), se definen:</p>
+    <div class="formula-block">
+      Error absoluto&nbsp; Ea = | x_r − x_a |<br>
+      Error relativo&nbsp;&nbsp; Er = | x_r − x_a | / | x_r |
+    </div>
+    <p>El error absoluto indica la magnitud de la diferencia entre el valor real y el aproximado, mientras que el error relativo la expresa en proporción al valor real — más útil para comparar precisión entre cantidades de distinta magnitud.</p>
+
+    <h2 id="propagacion">Propagación del error</h2>
+    <p>Cuando se realizan operaciones encadenadas, los errores de redondeo de cada paso pueden acumularse a lo largo del cálculo. Un algoritmo se considera <strong>numéricamente estable</strong> cuando esta propagación se mantiene acotada, e <strong>inestable</strong> cuando pequeños errores iniciales se amplifican de forma descontrolada a medida que avanza el cálculo.</p>
+</article>
+
+<nav class="page-nav">
+  <a href="../aritmetica-punto-flotante/index.html"><span class="dir">← Tema anterior</span><span class="ttl">Aritmética de punto flotante</span></a>
+  <a class="next" href="../algoritmos-convergencia/index.html"><span class="dir">Tema siguiente →</span><span class="ttl">Algoritmos y convergencia</span></a>
+</nav>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="fmeta">Métodos Numéricos — Facultad de Ingeniería de Sistemas, 7.º semestre<br>Fundación Universitaria Claretiana (Uniclaretiana) · Docente: Nancy González Ramírez</p>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../recursos/index.html">Recursos</a>
+      <a href="../acerca-de/index.html">Acerca de</a>
+    </nav>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

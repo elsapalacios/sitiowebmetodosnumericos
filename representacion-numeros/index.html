@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Representación de números en el computador · Métodos Numéricos</title>
+<meta name="description" content="Sistema binario, punto fijo y punto flotante (IEEE 754).">
+
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html">
+      <strong>Métodos Numéricos</strong>
+      <span>Introducción y Teoría de errores</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">Menú ≡</button>
+    <nav class="main-nav">
+      <a href="../introduccion/index.html" class=""><span class="num">01</span>Introducción</a>
+      <a href="../representacion-numeros/index.html" class="active"><span class="num">02</span>Representación</a>
+      <a href="../aritmetica-punto-flotante/index.html" class=""><span class="num">03</span>Aritmética</a>
+      <a href="../errores-redondeo/index.html" class=""><span class="num">04</span>Errores</a>
+      <a href="../algoritmos-convergencia/index.html" class=""><span class="num">05</span>Algoritmos</a>
+      <a href="../python-metodos-numericos/index.html" class=""><span class="num">06</span>Python</a>
+      <a href="../recursos/index.html" class="">Recursos</a>
+      <a href="../acerca-de/index.html" class="">Acerca de</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-head">
+  <p class="kicker">Tema 02 — Fundamentos</p>
+  <h1>Representación de números en el computador</h1>
+  <p class="dek">Sistema binario, punto fijo y punto flotante (IEEE 754).</p>
+</div>
+
+<nav class="toc" aria-label="Contenido de la página">
+  <p class="toc-label">En esta página</p>
+  <ol>
+        <li><a href="#binario">Sistema binario</a></li>
+        <li><a href="#fijo">Representación en punto fijo</a></li>
+        <li><a href="#flotante">Representación en punto flotante</a></li>
+  </ol>
+</nav>
+
+<article class="content">
+  
+    <h2 id="binario">Sistema binario</h2>
+    <p>Los computadores no pueden almacenar cantidades con precisión infinita, ya que su memoria es finita. Internamente, todo computador trabaja en base 2, es decir, con dígitos 0 y 1 (bits). Cualquier número decimal debe convertirse a su representación binaria antes de ser almacenado y procesado, lo que obliga a truncar o redondear las cifras que exceden la capacidad disponible.</p>
+
+    <h2 id="fijo">Representación en punto fijo</h2>
+    <p>En esta representación se reserva una cantidad fija de bits para la parte entera y otra cantidad fija para la parte fraccionaria. Es sencilla de implementar, pero tiene un rango dinámico muy limitado: no permite representar simultáneamente números extremadamente grandes y extremadamente pequeños con buena precisión.</p>
+
+    <h2 id="flotante">Representación en punto flotante</h2>
+    <p>La representación en punto flotante, normalizada por el estándar IEEE 754, expresa un número real de la forma:</p>
+    <div class="formula-block">x = ± (1.f) × 2<sup>e</sup></div>
+    <p>donde el signo indica si el número es positivo o negativo, la mantisa o fracción (f) almacena las cifras significativas, y el exponente (e) determina la magnitud del número, permitiendo representar valores muy grandes o muy pequeños con un número reducido de bits.</p>
+
+    <table class="data">
+      <thead><tr><th>Formato</th><th>Signo</th><th>Exponente</th><th>Mantisa</th></tr></thead>
+      <tbody>
+        <tr><td>Precisión simple (32 bits)</td><td>1 bit</td><td>8 bits</td><td>23 bits</td></tr>
+        <tr><td>Precisión doble (64 bits)</td><td>1 bit</td><td>11 bits</td><td>52 bits</td></tr>
+      </tbody>
+    </table>
+
+    <p>Debido a que la mantisa tiene una cantidad finita de bits, no todos los números reales pueden representarse de manera exacta; muchos deben aproximarse al valor representable más cercano — la primera fuente de error numérico.</p>
+</article>
+
+<nav class="page-nav">
+  <a href="../introduccion/index.html"><span class="dir">← Tema anterior</span><span class="ttl">¿Qué es un método numérico?</span></a>
+  <a class="next" href="../aritmetica-punto-flotante/index.html"><span class="dir">Tema siguiente →</span><span class="ttl">Aritmética de punto flotante</span></a>
+</nav>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="fmeta">Métodos Numéricos — Facultad de Ingeniería de Sistemas, 7.º semestre<br>Fundación Universitaria Claretiana (Uniclaretiana) · Docente: Nancy González Ramírez</p>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../recursos/index.html">Recursos</a>
+      <a href="../acerca-de/index.html">Acerca de</a>
+    </nav>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

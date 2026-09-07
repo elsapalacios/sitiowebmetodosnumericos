@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algoritmos y convergencia · Métodos Numéricos</title>
+<meta name="description" content="Elementos de un algoritmo iterativo y criterios de convergencia.">
+
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html">
+      <strong>Métodos Numéricos</strong>
+      <span>Introducción y Teoría de errores</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">Menú ≡</button>
+    <nav class="main-nav">
+      <a href="../introduccion/index.html" class=""><span class="num">01</span>Introducción</a>
+      <a href="../representacion-numeros/index.html" class=""><span class="num">02</span>Representación</a>
+      <a href="../aritmetica-punto-flotante/index.html" class=""><span class="num">03</span>Aritmética</a>
+      <a href="../errores-redondeo/index.html" class=""><span class="num">04</span>Errores</a>
+      <a href="../algoritmos-convergencia/index.html" class="active"><span class="num">05</span>Algoritmos</a>
+      <a href="../python-metodos-numericos/index.html" class=""><span class="num">06</span>Python</a>
+      <a href="../recursos/index.html" class="">Recursos</a>
+      <a href="../acerca-de/index.html" class="">Acerca de</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-head">
+  <p class="kicker">Tema 05 — Teoría de errores</p>
+  <h1>Algoritmos y convergencia</h1>
+  <p class="dek">Elementos de un algoritmo iterativo y criterios de convergencia.</p>
+</div>
+
+<nav class="toc" aria-label="Contenido de la página">
+  <p class="toc-label">En esta página</p>
+  <ol>
+        <li><a href="#elementos">Elementos de un algoritmo iterativo</a></li>
+        <li><a href="#convergencia">Convergencia</a></li>
+  </ol>
+</nav>
+
+<article class="content">
+  
+    <h2 id="elementos">Elementos de un algoritmo iterativo</h2>
+    <p>Un algoritmo numérico es una secuencia finita y ordenada de pasos que resuelve un problema mediante operaciones aritméticas y lógicas. La mayoría de los algoritmos numéricos son iterativos: parten de una aproximación inicial y la refinan en cada paso hasta cumplir un criterio de parada.</p>
+    <ul>
+      <li>Una aproximación inicial (o varias, según el método).</li>
+      <li>Una fórmula de recurrencia que genera la siguiente aproximación a partir de la anterior.</li>
+      <li>Un criterio de convergencia, generalmente basado en el error entre iteraciones sucesivas.</li>
+      <li>Un criterio de parada, como un número máximo de iteraciones, para evitar ciclos infinitos.</li>
+    </ul>
+
+    <h2 id="convergencia">Convergencia</h2>
+    <p>Se dice que un método numérico <strong>converge</strong> cuando la sucesión de aproximaciones generadas se acerca cada vez más al valor real de la solución a medida que aumenta el número de iteraciones. La velocidad de convergencia indica qué tan rápido disminuye el error entre iteraciones, y suele clasificarse como lineal, cuadrática o de orden superior según el método empleado.</p>
+    <p>No todos los métodos convergen para cualquier problema o condición inicial: algunos requieren que la aproximación inicial esté suficientemente cerca de la solución real, y otros pueden divergir u oscilar si no se cumplen ciertas condiciones matemáticas.</p>
+
+    <div class="callout">
+      <p class="label">Idea clave</p>
+      <p>Un buen algoritmo no solo debe converger: debe hacerlo de forma eficiente (pocas iteraciones), estable (sin amplificar los errores de redondeo) y con un costo computacional razonable.</p>
+    </div>
+</article>
+
+<nav class="page-nav">
+  <a href="../errores-redondeo/index.html"><span class="dir">← Tema anterior</span><span class="ttl">Errores de redondeo y aritmética de computadores</span></a>
+  <a class="next" href="../python-metodos-numericos/index.html"><span class="dir">Tema siguiente →</span><span class="ttl">Introducción a Python para métodos numéricos</span></a>
+</nav>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="fmeta">Métodos Numéricos — Facultad de Ingeniería de Sistemas, 7.º semestre<br>Fundación Universitaria Claretiana (Uniclaretiana) · Docente: Nancy González Ramírez</p>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../recursos/index.html">Recursos</a>
+      <a href="../acerca-de/index.html">Acerca de</a>
+    </nav>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
